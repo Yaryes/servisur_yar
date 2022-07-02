@@ -5,7 +5,7 @@ if ($_SESSION['user']['rut'] != null) {
     include('template/header.php');
     include('template/nav/menu_operario.php');
     ?>
-    <h3>Recarga Combustible</h3>
+    <h3>Modulo Recarga Combustible</h3>
 <?php
     include('template/footer.php');
 } else {
