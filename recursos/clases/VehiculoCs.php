@@ -38,5 +38,43 @@ class Vehiculo extends Conexion
         return json_encode($infoIngVehiculo);
     }
 
+    public function selectVehiculo() {
+
+        
+        $data = (count(func_get_args()) > 0) ? func_get_args()[0] : func_get_args();
+
+        $queryCamion = "SELECT patente FROM vehiculo WHERE vehiculo = ?;";
+        $sltVehiculo = $this->prepare($queryCamion);
+        $vehiculo = utf8_decode($data['vehiculo']);
+
+
+        $sltVehiculo->bind_param('s',$vehiculo);
+        $sltVehiculo->execute();
+
+        $sltVehiculo->bind_result($patente);
+     
+        $sltVehiculo->fetch();
+        
+        var_dump($patente);exit;
+        // if ($patente != "") {
+        //     $r = array(
+        //         'existe' => true,
+        //         'patente' => $patente
+        //     );
+        // } else {
+        //     $r = array(
+        //         'existe' => false
+        //     );
+        // }
+        // $infoIngVehiculo = array(
+        //     'patente' => $vehiculo,
+        //     'mensaje' => "<div class='alert alert-primary h5'>VEHICULO REPORTADO CORRECTAMENTE</div>"
+        // );
+        // var_dump($infoIngVehiculo);exit;
+        // return json_encode($r);
+    }
+
+
 }
+
 $vehiculos = new Vehiculo;

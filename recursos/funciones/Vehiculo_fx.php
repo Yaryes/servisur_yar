@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('../clases/VehiculoCs.php');
+
 if (isset($_POST['btnIngresoVehiculo'])) {
 
     $vehiculo = $_POST['vehiculo'];
@@ -40,4 +41,17 @@ if (isset($_POST['btnIngresoVehiculo'])) {
             header('location: ../../faenas.php?idservi='.$IngVehiculo->idservi.'&msg='.$mensaje);
         }
     }
+}
+
+if ($_POST['controlador'] != null) {
+    
+    $vehiculo = $_POST['controlador'][0];
+    $patente = "";
+    $ArregloselectVehiculo = array(
+        'vehiculo' => $vehiculo,
+        'patente' => $patente);
+   
+    $IngVehiculos = json_decode($vehiculos->selectVehiculo($ArregloselectVehiculo));
+    
+ 
 }

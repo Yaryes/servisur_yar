@@ -103,12 +103,12 @@ if ($_SESSION['user']['rut'] != null) {
                                 </label>
                                 <input type="text" name="lugar_destino" id="lugar_destino" value="<?php echo $lugar_destino; ?>" class=" " aria-label="Default">
                             </div>
-                            <!-- <div class="col-12">
+                            <div class="col-12">
                                 <label for="embarcacion" class="">
                                     <h5>Embarcacion : </h5>
                                 </label>
                                 <input type="text" name="embarcacion" id="embarcacion" value="<?php echo $embarcacion; ?>" class=" " aria-label="Default">
-                            </div> -->
+                            </div>
                             <div class="col-12">
                                 <div class="form-floating">
                                     <label for="observaciones">
@@ -167,7 +167,7 @@ if ($_SESSION['user']['rut'] != null) {
                         <input readonly="readonly" type="number" name="idservicio_diario" id="idservicio_diario" value="<?php echo $idservicio_diario; ?>" aria-label="Default">
                     </div>
                         <div class="col-7">
-                            <select class="form-control mt-1 rounded-pill" name="vehiculo" id="vehiculo">
+                            <select class="form-control mt-1 rounded-pill" name="selectVehivulo" id="selectVehivulo">
                                 <option disabled selected>Seleccione el Vehiculo</option>
                                 <option value="Camion">Camion</option>
                                 <option value="Rampla">Rampla</option>
@@ -194,6 +194,7 @@ if ($_SESSION['user']['rut'] != null) {
                             </label>
                             <input type="text" name="kilometraje" id="kilometraje" aria-label="Default">
                         </div>
+                        <!-- CAMBIAR NAME ID DE COMBUSTIBLE -->
                         <div class="col-12">
                             <label for="cant_combustible" class="">
                                 <h5>Combultible </h5>
